@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WebApplication4.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="Kullanici.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            height: 23px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="height: 151px; width: 700px; margin-left:300px; background-color: royalblue;">
+            
+        </div>
+
+        <div style="margin-left:300px; width:700px; height:20px"></div>
+        <div style="margin-left:300px; width:700px; height:auto">
+             <div style=" width:200px; height:auto; background-color: royalblue; float:left"> 
+                 <table class="auto-style1">
+                     <tr>
+                         <td>MENÜLER</td>
+                     </tr>
+                     <tr>
+                         <td>&nbsp;</td>
+                     </tr>
+                     <tr>
+                         <td style="border: thin solid #FFFFFF"><a href="Kategoriler.aspx">KATEGORİLER</a></td>
+                     </tr>
+                     <tr>
+                         <td style="border: thin solid #FFFFFF"><a href="Urunler.aspx"> ÜRÜNLER</a></td>
+                     </tr>
+                     <tr>
+                         <td style="border: thin solid #FFFFFF">HAKKIMIZDA</td>
+                     </tr>
+                 </table>
+             </div>
+             <div style="margin-left:250px; height:350px; width:450px; background-color:royalblue; ">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                 </asp:ContentPlaceHolder>
+             </div>
+         </div>   
+    </form>
+</body>
+</html>
+
+
+ 

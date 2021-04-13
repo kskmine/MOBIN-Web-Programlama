@@ -1,0 +1,163 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="kullanici.master.cs" Inherits="WebApplication4.kullanici" %>
+
+<!DOCTYPE html>
+
+<html  lang="en-US">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="Kullanici.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+
+    <link href="bootstrap-carousel/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="bootstrap-carousel/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="bootstrap-carousel/js/jquery-1.11.1.min.js"></script>
+    <script src="bootstrap-carousel/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+
+		.ortala{max-width:700px;margin:auto;margin-top:50px;}
+
+		/*h2{margin:0;color:#fff;padding-top: 90px;font-size: 52px;font-family: "trebuchet ms", sans-serif;*/    }
+
+		.item{background:#999;text-align: center;height:300px !important;}
+
+	    .auto-style3 {
+            width: 192px;
+        }
+        .auto-style4 {
+            width: 192px;
+            font-size: x-small;
+        }
+
+	</style>
+</head>
+<body>
+      <form id="form1" runat="server">
+        <div style="height: 275px; width: 700px; margin-left: 300px; background-color:cadetblue">
+            
+          
+            <div class="ortala">
+
+		<div id="slider" class="carousel slide" data-interval="1000" >
+			<div class="carousel-inner">
+
+				<div class="active item">  <img src="image/ocak-2019-banner-grandekonsept.jpg" /> </div>
+
+				<div class="item"> <img src="image/slider/zenit-maxi-koltuk-takimi-1240x776.jpg" />	</div>
+
+				<div class="item"><div class="carousel-caption"></div>  <img src="image/slider/img-3935.jpg" /></div>
+
+				<div class="item"><div class="carousel-caption"></div> <img src="image/slider/everest-yatak1.jpg" /> </div>
+
+				<div class="item">
+                    <img src="image/slider/GU3-122.jpg" /></div>
+			</div>
+
+			<ol class="carousel-indicators">
+
+				<li data-target="#slider" data-slide-to="0" class="active"></li>
+
+				<li data-target="#slider" data-slide-to="1"></li>
+
+				<li data-target="#slider" data-slide-to="2"></li>
+
+				<li data-target="#slider" data-slide-to="3"></li>
+
+				<li data-target="#slider" data-slide-to="4"></li>
+
+			</ol>   
+
+			<a class="carousel-control left" href="#slider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+
+			<a class="carousel-control right" href="#slider" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+		</div>
+	</div>
+  </div>
+        <div style="margin-left: 300px; width: 700px; height: 20px;"></div>
+    
+          <div style="margin-left:300px; width:700px; height:25px; background-color: cadetblue;">
+            <table class="auto-style1">
+                <tr style="background-color: #FFFFFF">
+                    <td class="auto-style2"><a href="AnaSayfa.aspx" >ANASAYFA</a></td>
+                    <td class="auto-style2"><a href="Kategori.aspx">KATEGORİ</a></td>
+                     <td class="auto-style2"><a href="Sepet.aspx">SEPET</a></td>
+                    <td class="auto-style2"><a href="Hakkımızda.aspx">HAKKIMIZDA</a></td>
+                    <td class="auto-style2"><a href="iletisim.aspx">İLETİŞİM</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin-left:300px; width:700px; height:20px"></div>
+
+        <div style="margin-left:300px; width:700px; height:300px">
+             <div style=" width:200px; height:auto; background-color: cadetblue; float:left"> 
+                 <asp:DataList ID="DataList1" runat="server" Width="200px">
+                     <ItemTemplate>
+                         <div style="border: thin solid #C0C0C0">
+                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("CategoryName") %>'></asp:Label>
+                         </div>
+                     </ItemTemplate>
+                 </asp:DataList>
+                 <div style=" width:200px; background-color: white;">
+                     <br />
+                 </div>
+                
+             <div style=" width:200px; height:auto; background-color: cadetblue; ">
+
+                 <table class="nav-justified">
+                     <tr>
+                         <td class="auto-style4">KULLANICI ADI:</td>
+                         <td>
+                             <asp:TextBox ID="TxtKullanici" runat="server" Width="89px"></asp:TextBox>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="auto-style4">SIFRE:</td>
+                         <td>
+                             <asp:TextBox ID="TxtSifre" runat="server" Width="89px"></asp:TextBox>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td class="auto-style3">&nbsp;</td>
+                         <td>
+                             <asp:Button ID="tblGiris" runat="server" OnClick="tblGiris_Click" Text="GİRİŞ" />
+                         </td>
+                     </tr>
+                 </table>
+
+             </div>
+                
+             </div>
+
+            
+            
+            
+
+            <div style="margin-left:250px; height:auto; width:450px; background-color:cadetblue; ">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                 </asp:ContentPlaceHolder>
+                
+             </div>
+         </div>   
+    </form>
+</body>
+</html>
+
+
+ 
